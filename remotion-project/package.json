@@ -1,0 +1,27 @@
+{
+  "name": "remotion-video-suite",
+  "version": "1.0.0",
+  "description": "Programmatic video production with Remotion",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.0",
+    "@remotion/google-fonts": "4.0.0",
+    "@remotion/media-utils": "4.0.0",
+    "@remotion/player": "4.0.0",
+    "@remotion/renderer": "4.0.0",
+    "@remotion/zod-types": "4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.4.0"
+  }
+}
