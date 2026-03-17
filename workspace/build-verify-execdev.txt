@@ -1,0 +1,79 @@
+ExecDev v3.3 Build Verification
+================================
+Date: 2026-03-08
+Build Agent: T1 (subagent)
+
+WORD COUNTS
+-----------
+v3.2 (source): 4,447 words
+v3.3 (output): 5,205 words
+Delta:           +758 words
+Target delta:    ~650 words
+Variance:        +108 words over target (~17%)
+
+Note: Variance is due to the Skill Registry Schema being the designated centerpiece
+with maximum detail per spec, plus the full JSON schema block with inline type
+annotations. All prose is compressed — no filler.
+
+NEW SECTIONS ADDED
+------------------
+1. Skill Registry Schema (Shared Infrastructure)
+   - Full JSON manifest schema with all fields
+   - Skill type taxonomy table (6 types)
+   - Resolution rules (skillDependencies, composesWith, dependencies, target, meta)
+   - Trust model statement
+
+2. Skill Impact Preview (Shared Infrastructure, after Skill Registry Schema)
+   - Pre-load inspection protocol
+   - skill preview command + output format
+   - Agent decision gate
+
+3. Context Isolation Pattern (Shared Infrastructure)
+   - Workspace partitioning by context_id
+   - State jailing
+   - Secret scoping
+   - Cross-context prohibition
+   - Context lifecycle (create → active → frozen → archived)
+
+4. Runtime Skill Injection Lifecycle (T1 Module)
+   - Six-phase lifecycle: Discovery → Resolution → Injection → Execution → Ejection → Graceful Degradation
+   - Conflict resolution rule
+   - Degradation decision protocol
+
+5. Tiered Goal Ancestry (T1 Module, Delegation Protocol section)
+   - T1: mission → initiative → objective
+   - T2: initiative → objective → task
+   - T3: objective → task
+   - mission_ref hook (Brain integration)
+   - Delegation brief scoping rule
+
+6. Enhanced Inter-Agent Communication (T2 Module)
+   - Extended JSON envelope: msg_id, reply_to, priority, ttl, status
+   - Status values: dispatched | acknowledged | processing | completed | nack | dead-letter
+   - nack and dead-letter semantics
+   - Priority governance rule
+
+7. Agent Contract Budget Fields (T1 Module, Formal Agent Contracts)
+   - per_task_ceiling, per_period_ceiling, budget_unit, overage_policy
+   - Brain integration note
+
+VERSION UPDATE
+--------------
+- YAML frontmatter: version '3.2' → '3.3'
+- Title line: "Executive Dev Architecture v3.2" → "Executive Dev Architecture v3.3"
+
+PRESERVATION CHECK
+------------------
+All v3.2 content preserved verbatim. Verified:
+✓ Static Core (Philosophy, Systemic Cost Test, Ideation Engine, Tier Assignment Rule, Anti-Pattern: Copy of a Copy)
+✓ Reference Index (full table of 20 domains)
+✓ Code Standards (Universal Rules, Code Review Gate)
+✓ Anti-Patterns (all 12 entries)
+✓ T1 Executive Module (SWOT Protocol, Ideation Council, Delegation Protocol, ADRs, Cost Governance, HITL, Cascading Failure, Workflow State Machine, Agent Contracts, Orchestration Runtime, Environment Promotion, Observability, Business Rule Registry, Secrets Lifecycle, RACI, Incident Response)
+✓ T2 Specialist Module (Value Proposition, Upward Challenge, Pipeline Awareness, Scoped Ideation, Operational Checklists)
+✓ T3 Executor Module (Quality Floor, I/O Contract Enforcement, Quality Gate Protocol, Failure Signaling, Boundaries)
+✓ Shared Infrastructure (System Topology, Agent Catalog, Data Contracts, Command Grammar, Execution Lifecycle, Failure Model, Platform Decision Matrix, Migration and Porting, Cross-Platform State Sync, Versioning, Composability, Skill Evolution Path)
+
+OUTPUT FILE
+-----------
+/home/user/workspace/executive-dev-architecture-v3.3-SKILL.md

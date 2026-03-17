@@ -1,0 +1,153 @@
+COMPRESSION VERIFICATION REPORT
+Executive Dev Architecture v3.3
+Run: 2026-03-08
+
+════════════════════════════════════════════════════════════
+WORD COUNTS
+════════════════════════════════════════════════════════════
+Pre-compression:   5,205 words
+Post-compression:  5,162 words
+Reduction:         43 words (0.8%)
+
+Note: Low reduction is expected and correct. Compression scope
+was restricted to NEW v3.3 sections only (7 sections). The
+v3.2 content was already compressed — re-compression was
+explicitly prohibited by task spec.
+
+════════════════════════════════════════════════════════════
+SECTIONS COMPRESSED (v3.3 NEW ONLY)
+════════════════════════════════════════════════════════════
+1. Tiered Goal Ancestry (line 262)
+   - Stripped "Every delegation brief includes" → "Delegation briefs include"
+   - Removed "Passing corporate mission to a T3 executor =" → "Passing corporate mission to a T3 ="
+   - "ExecDev defines the hierarchy; Brain supplies" → "ExecDev defines hierarchy; Brain supplies"
+   - "Delegation briefs include only tier-appropriate ancestry depth." → "Tier-appropriate ancestry depth only."
+
+2. T1: Formal Agent Contracts — BUDGET fields (line 354)
+   - Schema block: UNTOUCHED (kernel)
+   - Prose suffix: unchanged (already terse)
+
+3. Runtime Skill Injection Lifecycle (line 377)
+   - "scan workspace/registry for available skills matching" → "scan workspace/registry for skills matching"
+   - "newest compatible version wins" → "newest compatible wins"
+   - "skill governs within its domain" → "skill governs within domain"
+   - Graceful Degradation reworded terse: "Agent continues at reduced capability rather than silent failure" → "Reduced capability over silent failure" (semantic preserved)
+
+4. T2: Inter-Agent Communication (line 584)
+   - JSON schema block: UNTOUCHED (kernel)
+   - "receiver rejects message (bad input, out of scope) — sender must reroute" → "receiver rejects (bad input, out of scope) — sender reroutes"
+   - "TTL expired with no acknowledgment" → "TTL expired, no acknowledgment"
+   - "Every `dispatched` message requires `acknowledged`" → "Every `dispatched` requires `acknowledged`"
+
+5. Skill Registry Schema (line 722)
+   - JSON block: UNTOUCHED (kernel)
+   - Taxonomy table: UNTOUCHED (kernel — table rows)
+   - "Every skill ships with a `skill.json` manifest." → "Every skill ships with `skill.json`."
+   - Resolution rules: stripped "version wins on conflict" → "wins on conflict", "peer skills that may be co-loaded" → "peer skills co-loaded", `target` and `meta` field descriptions trimmed
+
+6. Skill Impact Preview (line 774)
+   - "Pre-load inspection protocol. Before injecting a skill, agent inspects" → "Pre-load inspection protocol. Agent inspects"
+   - "returns impact summary:" → "impact summary:" (implied by command output)
+   - "Prevents surprise context window blowout" → "Prevents surprise context blowout"
+   - "Impact summary is terse" → "Summary is terse"
+
+7. Context Isolation Pattern (line 784)
+   - "When a swarm operates across" → "For swarms across"
+   - "credentials available only to agents within matching context" → "credentials scoped to matching context only"
+   - "use inter-agent communication protocol only" → "inter-agent communication protocol only"
+
+════════════════════════════════════════════════════════════
+STRUCTURAL COUNTS
+════════════════════════════════════════════════════════════
+Metric                    Source   Compressed   Status
+Section headers              91           91   MATCH ✓
+Code block markers           38           38   MATCH ✓
+Table rows                   63           63   MATCH ✓
+Checklist items [ ]          15           15   MATCH ✓
+
+════════════════════════════════════════════════════════════
+KERNEL PROTECTION — NEVER-COMPRESS ITEMS
+════════════════════════════════════════════════════════════
+<HARD-GATE> tags:     0 in src, 0 in compressed (file has none — Brain skill has them) ✓
+<SELF-TEST> tags:     0 in src, 0 in compressed ✓
+Iron Laws:            "No proposal without analysis" ✓
+                      "No ship without test" ✓
+                      "No governance bypass under pressure" ✓
+All code blocks:      UNCHANGED ✓
+All table rows:       UNCHANGED ✓
+All checklist items:  UNCHANGED ✓
+All section headers:  UNCHANGED ✓
+JSON schema blocks:   UNCHANGED ✓
+
+════════════════════════════════════════════════════════════
+SEMANTIC PHRASES VERIFIED — 28 KEY PHRASES FROM NEW SECTIONS
+════════════════════════════════════════════════════════════
+[Tiered Goal Ancestry]
+  ✓ "mission → initiative → objective"
+  ✓ "context waste + hallucination risk"
+  ✓ "mission_ref"
+
+[Agent Contract Budget Fields]
+  ✓ "per_task_ceiling"
+  ✓ "per_period_ceiling"
+  ✓ "overage_policy"
+  ✓ "hard_stop | warn_and_continue | escalate"
+  ✓ "Brain defines governance, contract defines allocation"
+
+[Runtime Skill Injection Lifecycle]
+  ✓ "Graceful Degradation"
+  ✓ "halt and escalate"
+  ✓ "emit explicit warning"
+  ✓ "skillDependencies"
+  ✓ "Skills are transient context, not permanent identity"
+  ✓ "newest compatible" (condensed from "newest compatible version")
+
+[Enhanced Inter-Agent Communication]
+  ✓ "nack"
+  ✓ "dead-letter"
+  ✓ "No silent drops"
+  ✓ "dispatched"
+  ✓ "ttl"
+
+[Skill Registry Schema]
+  ✓ "skill:governance"
+  ✓ "composesWith"
+  ✓ "topological sort"
+  ✓ "copy-don't-install"
+  ✓ "tier_compatibility"
+  ✓ "Schema-first distribution"
+
+[Skill Impact Preview]
+  ✓ "skill preview {skill-name}"
+  ✓ "Not a report, a gate"
+  ✓ "Pre-load inspection protocol"
+
+[Context Isolation Pattern]
+  ✓ "context_id"
+  ✓ "create → active → frozen → archived"
+  ✓ "bolting on later is catastrophic"
+  ✓ "State jailing"
+  ✓ "Isolation must be native to architecture"
+
+════════════════════════════════════════════════════════════
+5 CONSECUTIVE BACKTEST PASSES
+════════════════════════════════════════════════════════════
+Pass 1: CLEAN ✓
+Pass 2: CLEAN ✓
+Pass 3: CLEAN ✓
+Pass 4: CLEAN ✓
+Pass 5: CLEAN ✓
+
+RESULT: 5/5 CONSECUTIVE CLEAN PASSES — APPROVED TO SHIP ✓
+
+════════════════════════════════════════════════════════════
+VERDICT
+════════════════════════════════════════════════════════════
+Compression: LOSSLESS ✓
+Scope: v3.3 NEW SECTIONS ONLY ✓ (v3.2 content untouched)
+Kernel integrity: INTACT ✓
+All structural counts: MATCH OR EXCEED ✓
+All semantic phrases: PRESENT ✓
+Backtest: 5/5 CLEAN ✓
+
+Output: /home/user/workspace/executive-dev-architecture-v3.3-compressed-SKILL.md
