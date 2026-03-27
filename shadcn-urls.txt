@@ -1,0 +1,16 @@
+https://ui.shadcn.com/docs/skills
+https://ui.shadcn.com/docs/mcp
+https://ui.shadcn.com/docs/components-json
+https://ui.shadcn.com/docs/monorepo
+https://ui.shadcn.com/docs/dark-mode
+https://ui.shadcn.com/docs/registry/getting-started
+https://ui.shadcn.com/docs/registry/namespace
+https://ui.shadcn.com/docs/registry/authentication
+https://ui.shadcn.com/docs/registry/examples
+https://ui.shadcn.com/docs/registry/mcp
+https://ui.shadcn.com/docs/registry/registry-index
+https://ui.shadcn.com/docs/registry/open-in-v0
+https://ui.shadcn.com/docs/javascript
+https://ui.shadcn.com/docs/rtl
+https://ui.shadcn.com/docs/changelog
+https://ui.shadcn.com/llms.txt

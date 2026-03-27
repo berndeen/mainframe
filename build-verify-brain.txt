@@ -1,0 +1,85 @@
+Brain v4.4 Build Verification
+==============================
+Date: 2026-03-08
+Agent: T1 Build Agent
+
+WORD COUNT
+----------
+v4.3 total:   4,798 words
+v4.4 total:   5,530 words
+Delta:          +732 words
+Spec target:   ~+550 words
+
+NOTE: Delta exceeds spec estimate by ~182 words. All excess is protocol
+kernel (HARD-GATE content, FSM notation, schema definitions, code blocks)
+— content that is explicitly marked "never compress" per the Lossless
+Compression Protocol. No filler prose was added. The spec estimate of
+~550 was conservative; the actual protocol density of the 8 required
+additions accounts for the difference.
+
+NEW SECTIONS ADDED
+------------------
+1. Budget Protocol (Universal Core, after Resource Acquisition)
+   - Declaration format with scope/ceiling/unit/thresholds
+   - HARD-GATE for budget checks at every gate (80% warning, 100% hard stop)
+   - Delegation: parent reserve + child allocation
+   - Platform Integration: Brain governs protocol, platform implements tracking
+
+2. Audit Events (Universal Core, after Budget Protocol)
+   - Append-only log at governance/audit/{task-id}.jsonl
+   - Mandatory events (all modes): classification, transitions, gates,
+     budget breaches, circuit breaks
+   - Strategic-only events: SWOT, delegation, ADRs, escalations
+   - Schema: { timestamp, event_type, task_id, agent, mode, detail, confidence }
+   - Cost scoping: Quick ~3, Standard ~5, Strategic ~10+
+
+3. Heartbeat Governance (Universal Core, after Audit Events)
+   - Pre-classification gate for periodic agents (3 conditions)
+   - Zombie prevention: max-idle threshold + parent escalation
+   - Budget integration: per-cycle + period budget model
+
+4. Purpose Field (Task Classification, added to classification output block)
+   - Purpose: {one-sentence why} added to classification write block
+   - Optional mission_ref for ExecDev goal ancestry
+   - Purpose informs prioritization under budget constraint
+
+5. Circuit Breaker (Shared Infrastructure, Failure Model as 5th category)
+   - FSM: CLOSED → OPEN → HALF-OPEN → CLOSED
+   - 4 triggers: same-class failures, cross-tier cascade, budget drain,
+     recursive loops
+   - Response: pause, log, escalate, half-open test, close or remain open
+   - Integration with Budget Protocol and Audit Events
+
+6. Gate Response Protocol (Shared Infrastructure, after Circuit Breaker)
+   - Format: BLOCKED: {what} → REMEDIATE: {what to do}
+   - 3 canonical examples provided
+   - Gates without remediation guidance are incomplete
+
+7. New Anti-Patterns (4, added to existing Anti-Patterns list)
+   - Budget gaming: splitting tasks to avoid per-task ceilings
+   - Audit theater: emitting events without meaningful detail
+   - Retry storms: retrying failures without backoff or circuit breaker check
+   - Zombie heartbeats: periodic agents running indefinitely with no work
+
+8. New Excuse/Reality row (1, added to existing table)
+   - "Budget slows us down" → "Unbounded cost is not speed — it's
+     uncontrolled burn. Budget forces prioritization, which IS the work."
+
+CRITICAL RULES COMPLIANCE
+--------------------------
+[PASS] v4.3 content unmodified — only additions made
+[PASS] Version updated: v4.3 → v4.4 in title and frontmatter
+[PASS] Budget Protocol has <HARD-GATE> tag
+[PASS] Circuit Breaker uses FSM notation (CLOSED/OPEN/HALF-OPEN)
+[PASS] Writing style: terse, imperative, no filler prose
+[PASS] Formatting: code blocks, pipe-delimited, <HARD-GATE> tags preserved
+[PASS] All 8 additions present in specified locations
+[PASS] Purpose field added to classification output block
+[PASS] Audit Events placed after Budget Protocol in Universal Core
+[PASS] Heartbeat Governance placed after Audit Events in Universal Core
+[PASS] Gate Response Protocol placed in Shared Infrastructure after Circuit Breaker
+
+OUTPUT
+------
+Skill file: /home/user/workspace/the-brain-v4.4-SKILL.md
+Verify file: /home/user/workspace/build-verify-brain.txt
